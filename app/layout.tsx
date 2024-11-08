@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import InfoBar from "@/components/infobar";
 import Sidebar from "@/components/sidebar";
 
 const geistSans = localFont({
@@ -40,7 +39,6 @@ export default function RootLayout({
           <div className="flex overflow-hidden h-screen">
             <Sidebar />
             <div className="w-full">
-              {/* <InfoBar /> */}
               <div className="border-l-[1px] border-t-[1px] h-screen rounded-l-3xl---y border-muted-foreground/20 overflow-scroll">
                 {children}
               </div>

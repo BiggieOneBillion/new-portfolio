@@ -1,11 +1,10 @@
 import React from "react";
-import { TimelineDemo } from "./timeline";
 
 type Props = {
   children: React.ReactNode
 }
 
-export function DotBackgroundDemo({children}:Props) {
+export function DotBackground({children}:Props) {
   return (
     <div className="h-fit overflow-hidden w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
       {/* Radial gradient for the container to give a faded look */}

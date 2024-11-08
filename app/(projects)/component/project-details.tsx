@@ -1,7 +1,18 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const ProjectDetails = ({ datum }: { datum: any }) => {
+type Prop = {
+  datum: {
+    name: string;
+    description: string;
+    stack: (string | undefined)[];
+    links: {
+      website: string;
+    };
+  };
+};
+
+const ProjectDetails = ({ datum }: Prop) => {
   return (
     <div className="border  border-blacky  border-white h-fit grid grid-cols-4">
       <span className="lg:w-[300px] text-center border-blacky border-white font-mono py-4 text-sm text-blacky text-white capitalize border-r ">
@@ -11,7 +22,7 @@ const ProjectDetails = ({ datum }: { datum: any }) => {
         {datum.description}
       </span>
       <div className="lg:w-[300px] flex flex-wrap justify-center items-center gap-2 border-blacky border-white font-mono py-4 text-sm text-blacky text-white capitalize border-r ">
-        {datum.stack.map((technology: any) => (
+        {datum.stack.map((technology: string | undefined) => (
           <span
             key={uuidv4()}
             className="text-sm font-light cursor-pointer hover:border-[rgba(0,0,0,0.5)]y hover:border-white transition-all duration-300 ease-in-out p-1 rounded-lg border border-[rgba(0,0,0,0.2)]y border-white/40 text-blacky text-white"

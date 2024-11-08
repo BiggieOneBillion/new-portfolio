@@ -2,7 +2,6 @@
 import { HoverEffect } from "@/components/global/hover-effect-cards";
 import {
   Container,
-  JavaLogo,
   JavaScriptLogo,
   NestJSLogo,
   ReactLogo,

@@ -1,8 +1,6 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import ProjectDetails from "./project-details";
-import { GrContactInfo } from "react-icons/gr";
-import { motion } from "framer-motion";
 import { data } from "./project-data";
 import { LinkPreview } from "@/components/global/link-preview";
 

@@ -161,7 +161,7 @@ export function TimelineDemo() {
           <ul className="flex flex-col gap-2 list-outside list-disc mb-8">
             <li className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
               {" "}
-              Led the development and maintenance of the company's website
+              Led the development and maintenance of the company&apos;s website
               front-end using JavaScript (ES6), CSS3, HTML, and React.js.
             </li>
             <li className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal">
@@ -189,7 +189,7 @@ export function TimelineDemo() {
             diverse backgrounds and skill levels. I believe that clear and
             concise communication is essential to success, as it enables
             effective collaboration and ensures that project goals are met
-            efficiently. <br />I love to work with you, and I'm excited to see
+            efficiently. <br />I love to work with you, and I&apos;m excited to see
             what we can achieve together!
           </p>
         </div>

@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState, memo } from "react";
+import React, { useEffect, useRef, useState, memo, MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { cn } from "@/lib/utils";
+import { ClickEvent } from "@tsparticles/engine";
 
 export const TextRevealCard = ({
   text,
@@ -16,7 +17,7 @@ export const TextRevealCard = ({
   className?: string;
 }) => {
   const [widthPercentage, setWidthPercentage] = useState(0);
-  const cardRef = useRef<HTMLDivElement | any>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
   const [left, setLeft] = useState(0);
   const [localWidth, setLocalWidth] = useState(0);
   const [isMouseOver, setIsMouseOver] = useState(false);
@@ -30,7 +31,7 @@ export const TextRevealCard = ({
     }
   }, []);
 
-  function mouseMoveHandler(event: any) {
+  function mouseMoveHandler(event: MouseEvent) {
     event.preventDefault();
 
     const { clientX } = event;
@@ -49,7 +50,7 @@ export const TextRevealCard = ({
   }
   function touchMoveHandler(event: React.TouchEvent<HTMLDivElement>) {
     event.preventDefault();
-    const clientX = event.touches[0]!.clientX;
+    const clientX = (event as unknown as React.TouchEvent<HTMLDivElement>).touches[0]!.clientX;
     if (cardRef.current) {
       const relativeX = clientX - left;
       setWidthPercentage((relativeX / localWidth) * 100);
@@ -61,7 +62,7 @@ export const TextRevealCard = ({
     <div
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
-      onMouseMove={mouseMoveHandler}
+      onMouseMove={mouseMoveHandler} 
       onTouchStart={mouseEnterHandler}
       onTouchEnd={mouseLeaveHandler}
       onTouchMove={touchMoveHandler}
